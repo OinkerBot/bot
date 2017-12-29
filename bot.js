@@ -137,7 +137,7 @@ if (command === "warn") {
     } // if (modlogs)
    
 
-    if (message.mentions.members.size === 0)
+    if (message.mentions.members.size === 0) {
     return message.channel.send({embed: {
         color: 3447003,
         description: 'Please mention a user to **warn**! Usage: \`!warn <user> [reason]\`.\n\nMake sure you @mention the user!',
@@ -146,6 +146,7 @@ if (command === "warn") {
                 icon_url: message.author.avatarURL
             }
     }});
+    }
     
 
     
