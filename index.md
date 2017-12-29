@@ -1,6 +1,7 @@
-# JoshBot is a multipurpose Discord bot written in Discord.js
+# Oinker is a ~~multi~~  *mal*functional Discord bot written in Discord.js
+### Ok Just kidding it works
 ## Read on for the full list of commands for the bot.
-![JoshBot Icon](https://preview.ibb.co/kW1Yhm/IMG_1241.jpg)
+![Oinker Logo](https://cdn.discordapp.com/avatars/389081655152738314/41fe83c2529d20c367785b880db185b7.png?size=256)
 
 #### ?ping | **PONG!**
 #### ?lol | **lel!**
@@ -13,14 +14,15 @@
 
 ## ROADMAP
 
-- [x] Add a *say* command.
-- [x] Get a custom bot avatar/icon made.
-- [ ] Add a status/playing meesage.
-- [ ] Make the remove command less buggy.
-- [ ] Add a welcome/leave message system.
-- [ ] Add a MUSIC SYSTEM!
-- [ ] (possibly) Add a token/money system.
+- [ ] Free Server Setup! (You just invite the bot and he creates roles, channels and stuff)
+- [ ] Add Customisation!
+    - [ ] Custom Prefix for EACH SERVER
+    - [ ] Custom Commands for EACH SERVER
+    - [ ] Custom Self-assignable Roles/Ranks for EACH SERVER
+- [ ] Add a music system
+- [ ] Add a token/money system.
 
-
-#### JoshBot by is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.](https://creativecommons.org/licenses/by-nc-nd/4.0/)
-![CC BY-NC-ND 4.0](https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png)
+## Changelog
+- 29/12/17 - Forked off of nuBot with permission
+- 29/12/17 - Added Warn Command
+- 29/12/17 - Added Swear Detector!
