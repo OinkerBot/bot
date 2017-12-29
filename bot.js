@@ -215,5 +215,17 @@ if (command === "warn") {
     
     }
 });
+
+client.on('message', message => {
+// Swear Word Detector
+const swear = ["darn", "damn", "fuck", "shit", "asshole", "ass", "niggar", "nigger", "fucker", "shiter", "motherfucker", "motherfuck"];
+if( swear.some(word => message.content.includes(word)) ) {
+    if (message.author.id !== "345312965508988928" && message.author.id !== "242238447182544896") return
+    message.delete();
+    message.channel.send(`${message.author} just said a bad word!`);
+    }
+
+)};
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
