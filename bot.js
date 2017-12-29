@@ -145,8 +145,9 @@ if (command === "warn") {
                 name: `${message.author.username}#${message.author.discriminator}`,
                 icon_url: message.author.avatarURL
             }
-                message.delete();
     }});
+    
+
     
     if (command === "poop") {
         
