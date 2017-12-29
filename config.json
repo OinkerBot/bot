@@ -1,4 +1,4 @@
 {
-    "prefix" : "?",
-    "channel" : "welcome"
+    "prefix" : ">",
+    "channel" : "welcome-goodbye"
 }
