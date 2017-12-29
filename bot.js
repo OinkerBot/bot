@@ -9,7 +9,7 @@ client.on('ready', () => {
     // This will trigger when the bot comes online.
     console.log(`${client.user.tag} Is Active!`);
     console.log(`----------------`);
-    client.user.setPresence({game: {name: `on ${client.guilds.size} servers | ?help`, type: 0}});
+    client.user.setPresence({game: {name: `on ${client.guilds.size} servers | >help`, type: 0}});
 });
 
 client.on("guildCreate", guild => {
@@ -84,6 +84,69 @@ client.on('message', message => {
         message.channel.send("Ayy! What's up?");
         message.delete(0);
     }
+    
+
+if (command === "warn") {
+        let modRole = message.guild.roles.find("name", "Bot Commander");
+        if (!modRole) {
+          message.channel.send ("Could not find role called Bot Commander. Please create this role to use this command!")
+        }
+        if (message.member.roles.has(modRole)) {
+
+        let member = message.mentions.members.first();
+        let reason = args.slice(1).join(" ");
+        let modlogs = member.guild.channels.find('name', 'mod-logs');
+        if (!modlogs) {
+            message.channel.send({embed: {
+                color: 3447003,
+                description: `Creating a #mod-logs channel...\n\n***Please note that ${member} will not be warned!***`
+            }});
+            message.guild.createChannel('mod-logs', 'text');
+        }
+            
+        if (modlogs) {
+            
+            // If the mod-logs channel exists, |v| send below |v|
+            modlogs.send({embed: {
+                color: 0xFA5858,
+                description: `**Member:** ${member.user.username}#${member.user.discriminator} (${member.user.id})\n**Action:** Warn\n**Moderator:** ${message.author.username}#${message.author.discriminator}\n**Reason:** ${reason}\n\n${new Date()}`,
+                author: {
+                    name: `${message.author.username}#${message.author.discriminator}`,
+                    icon_url: message.author.displayAvatarURL
+                  }
+            }});
+        }
+          
+            // Send it to the User of Offence
+            member.send({embed: {
+                color: 0xFA5858,
+                description: `**Member:** ${member.user.username}#${member.user.discriminator} (${member.user.id})\n**Action:** Warn\n**Reason:** ${reason}\n\n${new Date()}`,
+                author: {
+                    name: `${member.user.username}#${member.user.discriminator}`,
+                    icon_url: member.user.displayAvatarURL
+                  }
+            }});
+            
+            if (!reason) {
+            message.channel.send (`**✅ ${member} was warned**`)
+            } else {
+                message.channel.send (`**✅ ${member} was warned for ${reason}**`)
+            } // Else
+        } // if (!reason)
+    
+    } // if (modlogs)
+   
+
+    if (message.mentions.members.size === 0)
+    return message.channel.send({embed: {
+        color: 3447003,
+        description: 'Please mention a user to **warn**! Usage: \`!warn <user> [reason]\`.\n\nMake sure you @mention the user!',
+            author: {
+                name: `${message.author.username}#${message.author.discriminator}`,
+                icon_url: message.author.avatarURL
+            }
+                message.delete();
+    }});
     
     if (command === "poop") {
         
