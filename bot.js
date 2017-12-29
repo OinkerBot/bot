@@ -132,9 +132,8 @@ if (command === "warn") {
             } else {
                 message.channel.send (`**✅ ${member} was warned for ${reason}**`)
             } // Else
-        } // if (!reason)
-    
-    } // if (modlogs)
+        } // if (message.member.roles.has(modRole))
+   
    
 
     if (message.mentions.members.size === 0) {
@@ -147,6 +146,8 @@ if (command === "warn") {
             }
     }});
     }
+
+}
     
 
     
